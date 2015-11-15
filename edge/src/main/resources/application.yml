@@ -1,0 +1,27 @@
+info:
+  component: Zuul Server
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+zuul:
+#  ignoredServices: "*"
+#  routes:
+#    collection1:
+#      path: /collection1/**
+#      stripPrefix: false
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+      
+server:
+  port: 8765
